@@ -1,7 +1,22 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
+<<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+version="4.0">
+  <display-name>Servlet 4.0 Test</display-name>
 
-<web-app>
-  <display-name>Archetype Created Web Application</display-name>
+  <servlet>
+    <servlet-name>imsController</servlet-name>
+    <servlet-class>control.IMSController</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>imsCommand.properties</param-value>
+    </init-param>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>imsController</servlet-name>
+    <url-pattern>/ims/*.do</url-pattern>
+  </servlet-mapping>
 </web-app>
