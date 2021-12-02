@@ -77,7 +77,6 @@ public abstract class Controller extends HttpServlet {
             RequestDispatcher rd = request.getRequestDispatcher(view);
             rd.forward(request, response);
         }
-        response.sendError(HttpServletResponse.SC_NOT_FOUND);
     }
 
 }
