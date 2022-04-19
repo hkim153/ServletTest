@@ -1,30 +1,379 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
+<!--
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	     version="3.0">
+-->
+<!--
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-
          version="3.1">
-  <display-name>Servlet 4.0 Test</display-name>
-  
-  <context-param>
-    <param-name>contextConfigLocation</param-name>
-    <param-value>classpath*:ecs/spring/context-*.xml</param-value>
-  </context-param>
+-->
+<web-app
+        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+        version="4.0">
+    <!-- 태그 순서
+  	<display-name>
+  	<description>
+  	<distributable>
+  	<context-param>
+  	<filter>
+  	<filter-mapping>
+  	<listener>
+  	<servlet>
+  	<servlet-mapping>
+  	<welcome-file-list>
+  	<error-page>
+   -->
+    <display-name>ServletTest</display-name>
 
-  <servlet>
-    <servlet-name>imsController</servlet-name>
-    <servlet-class>control.IMSController</servlet-class>
-    <init-param>
-      <param-name>config</param-name>
-      <param-value>imsCommand.properties</param-value>
-    </init-param>
-  </servlet>
+    <description>
+        Testcase for WAS
+    </description>
+    <!-- Context-Param -->
+    <context-param>
+        <param-name>handlesTypes</param-name>
+        <param-value>true</param-value>
+    </context-param>
+    <context-param>
+        <param-name>addFilter</param-name>
+        <!-- filterClass, filter, className -->
+        <param-value>filterClass</param-value>
+    </context-param>
 
-  <servlet-mapping>
-    <servlet-name>imsController</servlet-name>
-    <url-pattern>*.ims</url-pattern>
-  </servlet-mapping>
+    <context-param>
+        <!-- servletClass, servlet, className -->
+        <param-name>addServlet</param-name>
+        <param-value>servlet</param-value>
+    </context-param>
+
+    <!-- Filter & Filter-Mapping -->
+    <filter>
+        <filter-name>filterOne</filter-name>
+        <filter-class>filter.FilterOne</filter-class>
+        <init-param>
+            <param-name>filterOneParam</param-name>
+            <param-value>this is FilterOne Param in web.xml</param-value>
+        </init-param>
+    </filter>
+
+    <filter>
+        <filter-name>filterTwo</filter-name>
+        <filter-class>filter.FilterTwo</filter-class>
+        <init-param>
+            <param-name>filterTwoParam</param-name>
+            <param-value>this is FilterTwo Param in web.xml</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>filterOne</filter-name>
+        <servlet-name>filterServletOne</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>filterTwo</filter-name>
+        <servlet-name>filterServletTwo</servlet-name>
+    </filter-mapping>
+
+    <filter-mapping>
+        <filter-name>filterTwo</filter-name>
+        <servlet-name>filterServletOne</servlet-name>
+    </filter-mapping>
+
+    <!-- Listener -->
+    <listener>
+        <listener-class>listener.HttpSessionActivationListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.HttpSessionAttributeListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.HttpSessionBindingListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.HttpSessionIdListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.HttpSessionListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.ServletContextAttributeListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.ServletContextListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.ServletRequestAttributeListenerTest</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>listener.ServletRequestListenerTest</listener-class>
+    </listener>
+
+    <!-- Servlet & Servlet-Mapping -->
+    <servlet>
+        <servlet-name>postParam</servlet-name>
+        <servlet-class>servlet.PostParam</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>postParam</servlet-name>
+        <url-pattern>/postParam/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>httpServletTest</servlet-name>
+        <servlet-class>servlet.HttpServletTest</servlet-class>
+        <init-param>
+            <param-name>initParam</param-name>
+            <param-value>this is initParam in web.xml</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>httpServletTest</servlet-name>
+        <url-pattern>/httpServletTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>servletContextTest</servlet-name>
+        <servlet-class>servlet.ServletContextTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>servletContextTest</servlet-name>
+        <url-pattern>/servletContextTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>cookieTest</servlet-name>
+        <servlet-class>servlet.CookieTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cookieTest</servlet-name>
+        <url-pattern>/cookieTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>httpSessionCreate</servlet-name>
+        <servlet-class>servlet.HttpSessionCreate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>httpSessionCreate</servlet-name>
+        <url-pattern>/httpSessionCreate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>httpSessionRecreate</servlet-name>
+        <servlet-class>servlet.HttpSessionRecreate</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>httpSessionRecreate</servlet-name>
+        <url-pattern>/httpSessionRecreate</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>sendRedirectTest</servlet-name>
+        <servlet-class>servlet.SendRedirectTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sendRedirectTest</servlet-name>
+        <url-pattern>/sendRedirectTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>sendRedirectTestResult</servlet-name>
+        <servlet-class>servlet.SendRedirectTestResult</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sendRedirectTestResult</servlet-name>
+        <url-pattern>/sendRedirectTestResult</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>requestDispatcherTest</servlet-name>
+        <servlet-class>servlet.RequestDispatcherTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>requestDispatcherTest</servlet-name>
+        <url-pattern>/requestDispatcherTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>requestDispatcherTestResult</servlet-name>
+        <servlet-class>servlet.RequestDispatcherTestResult</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>requestDispatcherTestResult</servlet-name>
+        <url-pattern>/requestDispatcherTestResult</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>filterServletOne</servlet-name>
+        <servlet-class>servlet.FilterServletOne</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>filterServletOne</servlet-name>
+        <url-pattern>/filterServletOne</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>filterServletTwo</servlet-name>
+        <servlet-class>servlet.FilterServletTwo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>filterServletTwo</servlet-name>
+        <url-pattern>/filterServletTwo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>errorHandleServlet</servlet-name>
+        <servlet-class>servlet.ErrorHandleServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>errorHandleServlet</servlet-name>
+        <url-pattern>/errorHandleServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>errorCauseServlet</servlet-name>
+        <servlet-class>servlet.ErrorCauseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>errorCauseServlet</servlet-name>
+        <url-pattern>/errorCauseServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>asyncContextTest</servlet-name>
+        <servlet-class>servlet.async.AsyncContextTest</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>asyncContextTest</servlet-name>
+        <url-pattern>/asyncContextTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>httpSessionidChange</servlet-name>
+        <servlet-class>servlet.HttpSessionidChange</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>httpSessionidChange</servlet-name>
+        <url-pattern>/httpSessionidChange</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>stateInfo</servlet-name>
+        <servlet-class>servlet.StateInfo</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>stateInfo</servlet-name>
+        <url-pattern>/stateInfo</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>hsm</servlet-name>
+        <servlet-class>servlet.HttpServletMappingTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hsm</servlet-name>
+        <url-pattern>/httpServletMappingTest</url-pattern>
+        <url-pattern>*.extension</url-pattern>
+        <url-pattern>/path/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registrationTest</servlet-name>
+        <servlet-class>servlet.regist.RegistrationTest</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationTest</servlet-name>
+        <url-pattern>/registrationTest</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>nioServlet</servlet-name>
+        <servlet-class>servlet.nio.NioServlet</servlet-class>
+        <async-supported>true</async-supported>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>nioServlet</servlet-name>
+        <url-pattern>/nioServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ims servlet -->
+
+    <servlet>
+        <servlet-name>IMS248744</servlet-name>
+        <servlet-class>ims.IMS248744</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IMS248744</servlet-name>
+        <url-pattern>/IMS248744</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IMS248744Result</servlet-name>
+        <servlet-class>ims.IMS248744Result</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IMS248744Result</servlet-name>
+        <url-pattern>/IMS248744Result</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IMS253951</servlet-name>
+        <servlet-class>ims.IMS253951</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IMS253951</servlet-name>
+        <url-pattern>/IMS253951</url-pattern>
+    </servlet-mapping>
+
+    <welcome-file-list>
+        <welcome-file>index.html</welcome-file>
+        <welcome-file>index.htm</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
+        <welcome-file>default.html</welcome-file>
+        <welcome-file>default.htm</welcome-file>
+        <welcome-file>default.jsp</welcome-file>
+    </welcome-file-list>
+
+    <error-page>
+        <error-code>405</error-code>
+        <location>/errorHandleServlet</location>
+    </error-page>
+
+    <error-page>
+        <exception-type>java.lang.NullPointerException</exception-type>
+        <location>/errorHandleServlet</location>
+    </error-page>
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>classpath*:ecs/spring/context-*.xml</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>imsController</servlet-name>
+        <servlet-class>control.IMSController</servlet-class>
+        <init-param>
+            <param-name>config</param-name>
+            <param-value>/resource/imsCommand.properties</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>imsController</servlet-name>
+        <url-pattern>*.ims</url-pattern>
+    </servlet-mapping>
 </web-app>

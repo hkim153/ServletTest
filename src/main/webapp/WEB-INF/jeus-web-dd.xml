@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<jeus-web-dd xmlns="http://www.tmaxsoft.com/xml/ns/jeus">
+
+    <!-- the URL path of the context.  -->
+   <!-- <enable-jsp>true</enable-jsp> -->
+
+    <!-- configure whether to find it below web-inf directory when loading class. -->
+    <!--<webinf-first>
+        <enabled>true</enabled>
+    </webinf-first> -->
+    <!--
+    <context-path>/hyunsoo</context-path>
+    <async-config>
+        <background-thread-pool>
+            <name>bg_thpool</name>
+            <min>5</min>
+            <max>10</max>
+            <queue-size>200</queue-size>
+            <stuck-thread-handling>
+                <max-stuck-thread-time>300000</max-stuck-thread-time>
+                <action-on-stuck-thread>Warning</action-on-stuck-thread>
+                <stuck-thread-check-period>100000</stuck-thread-check-period>
+                <user-warning-class>UserWarning</user-warning-class>
+            </stuck-thread-handling>
+        </background-thread-pool>
+        <dispatch-thread-pool>
+            <name>dp_thpool</name>
+            <min>5</min>
+            <max>10</max>
+            <queue-size>20</queue-size>
+        </dispatch-thread-pool>
+    </async-config>
+    <node-java-context>false</node-java-context> -->
+</jeus-web-dd>

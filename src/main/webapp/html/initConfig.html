@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<h1>Method 호출 방식 설정</h1>
+<form action="../jsp/method.jsp" method="post">
+	<table border ="1">
+		<caption>
+			<strong>설정 내용</strong>
+		</caption>
+		<colgroup>
+			<col style="background:#eee;">
+			<col>
+		</colgroup>
+		<tr>
+			<td>Method: </td>
+			<td><input type="radio" name="method" value="get" checked="checked">GET
+				<input type="radio" name="method" value="post">POST
+			</td>
+		</tr>
+		<tr>
+		<tr>
+			<td>Cookie Name: </td>
+			<td> <input type="text" name="cookieName">
+		</tr>
+		<tr>
+			<td>Cookie value: </td>
+			<td> <input type="text" name="cookieValue">
+		</tr>
+		<tr>
+			<td>읽는 객체: </td>
+			<td><input type="radio" name="readObject" value="ServletInputStream">ServletInputStream
+				<input type="radio" name="readObject" value="BufferedReader">BufferedReader
+				<input type="radio" name="readObject" value="Parameter" checked="checked">Parameter
+				<input type="radio" name="readObject" value="ParameterMap">ParameterMap
+				<input type="radio" name="readObject" value="ParameterNames">ParameterNames
+			</td>
+		</tr>
+		<tr>
+			<td>쓰는 객체: </td>
+			<td><input type="radio" name="writeObject" value="ServletOutputStream">ServletOutputStream
+				<input type="radio" name="writeObject" value="PrintWriter" checked="checked">PrintWriter
+			</td>
+		</tr>
+		<tr>
+			<td>버퍼 사이즈: </td>
+			<td><input type="text" name="bufferSize"></td>
+		</tr>
+		<tr>
+			<td>Content Length: </td>
+			<td><input type="text" name="contentLength"></td>
+		</tr>
+		<tr>
+			<th>-
+			<th><input type="reset" value="리셋" style="width:100px"><input type="submit" value="엔터" style="width:100px">
+		</tr>
+	</table>
+</form>
+</body>
+</html>
