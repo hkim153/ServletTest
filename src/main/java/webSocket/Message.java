@@ -1,3 +1,4 @@
+/*
 package webSocket;
 
 public class Message {
@@ -34,3 +35,4 @@ public class Message {
         this.content = content;
     }
 }
+*/

@@ -9,7 +9,7 @@
 <body>
 
  <h2>HttpServlet 상속도</h2>
-	<img src="../../img/httpServlet.png" alt="http servlet">
+	<img src="../../resource/img/httpServlet.png" alt="http servlet">
  <hr/>
  <h2>Method</h2>
 	<ul>
@@ -51,7 +51,7 @@
 	</ul>
  <hr>
  <h2>서블릿 실행과정</h2>
- <img src="../../img/servletFlow.png" alt="servlet flow">
+ <img src="../../resource/img/servletFlow.png" alt="servlet flow">
  <h2>Test</h2>
  <a href="../../httpServletTest">서블릿 호출하기</a>
  

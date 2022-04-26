@@ -1,3 +1,4 @@
+/*
 package webSocket;
 
 import java.io.BufferedInputStream;
@@ -32,7 +33,8 @@ public class webSocketFileDownload {
 		ByteBuffer buf = ByteBuffer.wrap(fileBytes);
 		session.getBasicRemote().sendBinary(buf);
 		//127kb = 130048
-		/*int kb = 130048;
+		*/
+/*int kb = 130048;
 		byte[] fileBytes = new byte[kb];
 
 		BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file));
@@ -42,7 +44,8 @@ public class webSocketFileDownload {
 			session.getBasicRemote().sendBinary(buf);
 			count++;
 		}
-		*/
+		*//*
+
 	}
 
 	@OnOpen
@@ -59,4 +62,4 @@ public class webSocketFileDownload {
 	public void closedConnection(Session session) {
 		System.out.println("연결종료........");
 	}
-}
+}*/

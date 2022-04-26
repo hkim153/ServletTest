@@ -1,5 +1,5 @@
-package webSocket;/*
- * package webSocket;
+
+/* package webSocket;
  * 
  * import java.io.IOException; import java.net.URI; import
  * java.net.URISyntaxException; import java.util.HashMap;

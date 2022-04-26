@@ -1,3 +1,4 @@
+/*
 package webSocket;
 
 import javax.websocket.OnClose;
@@ -41,4 +42,4 @@ public class AnnotatedServerEndpoint {
 		// 콘솔에 에러를 표시한다.
 		t.printStackTrace();
 	}
-}
+}*/

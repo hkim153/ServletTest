@@ -8,7 +8,7 @@
 </head>
 <body>
 	<h2>Registration이란</h2>
-	<img src="../../img/registration.png" alt="Registration Hierarchy"><br>
+	<img src="../../resource/img/registration.png" alt="Registration Hierarchy"><br>
 	Registration 객체는 web.xml에 정의되어 컨테이너에 등록된 Servlet과 Filter정보를 가져올 수 있는 객체이다.<br>
 	ServletContext에서 getServletRegistration(String servletName) 또는 getFilterRegistration(String filterName)으로<br>
 	각각의 Registration을 가져와서 web.xml에서 추가할 수 있는 정보들을 해당 객체로 통해 할 수 있게 된다.(ex.addMapping(String urlPatterns))<br>

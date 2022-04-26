@@ -15,10 +15,10 @@
 	
 	예를 들어,</br>
 	아래의 그림과 같이 web.xml에 Servlet이 정의되어 있고, </br>
-	<img src="../img/httpServletMapping1.png" alt="httpServletMapping in web.xml"></br></br>
+	<img src="../resource/img/httpServletMapping1.png" alt="httpServletMapping in web.xml"></br></br>
 	
 	해당 HttpServlet을 호출하기 위해서 다양한 url로 호출했다면, 다음과 같은 결과를 얻을 수 있다.</br></br>
-	<img src="../img/httpServletMapping2.png" alt="httpServletMapping Result"></br></br>
+	<img src="../resource/img/httpServletMapping2.png" alt="httpServletMapping Result"></br></br>
 	<hr>
 	
 	<h2>MappingMatch</h2>

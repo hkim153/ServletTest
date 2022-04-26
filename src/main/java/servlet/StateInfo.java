@@ -120,20 +120,20 @@ public class StateInfo extends HttpServlet {
 					"	여러 페이지 간에 정보를 공유하는 역할을 한다.<br/>\n" + 
 					"	이 때, 요청 재지정 된 페이지로 넘어 갈 때 HttpServletRequest와 HttpServletResponse 객체를 넘겨주기 때문에,\n" + 
 					"	요청 재지정 하기 전에 HttpServletRequest에 상태 정보를 저장한 후에 넘긴다.\n" + 
-					"	<img src=\"img/requestDispatcherFlow.png\" alt=\"requestDispatcher Flow\">\n" + 
+					"	<img src=\"resource/img/requestDispatcherFlow.png\" alt=\"requestDispatcher Flow\">\n" +
 					"	<hr>\n" + 
 					"	<h2>요청 재지정 기능을 제공하는 객체</h2>\n" + 
 					"	2개의 객체가 있다.\n" + 
 					"	<ol>\n" + 
 					"		<li><b>HttpServletResponse</b> : 현재 서버가 아닌 다른 서버의 자원으로도 이동 가능, HttpServletReqeust HttpServletResponse 재생성 <br/>\n" + 
-					"			<img src=\"img/sendRedirect.png\" alt=\"sendRedirect.png\"><br/>\n" + 
+					"			<img src=\"resource/img/sendRedirect.png\" alt=\"sendRedirect.png\"><br/>\n" +
 					"			<ul>\n" + 
 					"				<li>void sendRedirect(String location) : location 설정된 자원으로 요청을 재지정한다</li>\n" + 
 					"				<li>String encodeRedirectURL(String url) : url에 설정된 URL 문자열에 '쿠키를 사용할 수 없을 때 그리고 다른 서버가 아닐 때' session id정보를 추가하여 반환한다. sendRedirect의 parameter로 사용되어 요청을 재지정한다</li>\n" + 
 					"			</ul>\n" + 
 					"		</li>\n" + 
 					"		<li><b>RequestDispatcher</b> : 현재 자원과 동일한 웹 애플리케이션 내에서만 이동 가능, HttpServletReqeust HttpServletResponse 재사용 <br/>\n" + 
-					"			<img src=\"img/requestDispatcher.png\" alt=\"requestDispatcher.png\"><br/>\n" + 
+					"			<img src=\"resource/img/requestDispatcher.png\" alt=\"requestDispatcher.png\"><br/>\n" +
 					"			<ul>\n" + 
 					"				<li>void include(ServletRequest request, ServletResponse response) : 다른 자원의 처리 결과를 현재 페이지에 포함한다.</li>\n" + 
 					"				<li>void forward(ServletRequest request, ServletResponse response) : 요청을 다른 자원으로 넘긴다.\n" + 

@@ -10,7 +10,7 @@
 
 	<h2>Filter 란?</h2>
 	필터는 여러 서블릿과 맵핑되어 서블릿이 수행되기 전과 후에 작업들을 처리해주는 역할을 한다.<br/>
-	<img src="../../img/filter.png" alt="Filter">
+	<img src="../../resource/img/filter.png" alt="Filter">
 	<hr>
 	
 	<h2>Filter 관련 interface</h2>
