@@ -41,11 +41,6 @@
           <artifactId>javax.websocket-api</artifactId>
           <version>1.0</version>
       </dependency>
-      <dependency>
-          <groupId>com.tmax.jeus</groupId>
-          <artifactId>hfm-config-client</artifactId>
-          <version>21.0.0.0-SNAPSHOT</version>
-      </dependency>
   </dependencies>
 
   <build>
