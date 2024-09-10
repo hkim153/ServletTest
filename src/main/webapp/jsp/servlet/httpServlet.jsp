@@ -8,7 +8,7 @@
 </head>
 <body>
 
- <h2>HttpServlet 상속도</h2>
+ <h2>HttpServlet 상속도!!!!</h2>
 	<img src="../../resource/img/httpServlet.png" alt="http servlet">
  <hr/>
  <h2>Method</h2>

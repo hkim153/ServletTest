@@ -5,18 +5,16 @@
 	     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
 	     version="3.0">
 -->
-
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-<!--
-<web-app
-        xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+
+<!--<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-        version="4.0">
-    -->
+        version="4.0">-->
+
     <!-- 태그 순서
   	<display-name>
   	<description>
@@ -32,6 +30,12 @@
    -->
     <display-name>ServletTest</display-name>
 
+    <locale-encoding-mapping-list>
+        <locale-encoding-mapping>
+            <locale>ko_KR</locale>
+            <encoding>UTF-8</encoding>
+        </locale-encoding-mapping>
+    </locale-encoding-mapping-list>
     <description>
         Testcase for WAS
     </description>
@@ -349,6 +353,33 @@
         <url-pattern>/IMS253951</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>IMS301143</servlet-name>
+        <servlet-class>ims.IMS301143</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IMS301143</servlet-name>
+        <url-pattern>/IMS301143</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>IMS301941</servlet-name>
+        <servlet-class>ims.IMS301941</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IMS301941</servlet-name>
+        <url-pattern>/IMS301941</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ThreadLocalServlet</servlet-name>
+        <servlet-class>ims.ThreadLocalServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ThreadLocalServlet</servlet-name>
+        <url-pattern>/threadLocalServlet</url-pattern>
+    </servlet-mapping>
+
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
@@ -367,11 +398,6 @@
         <exception-type>java.lang.NullPointerException</exception-type>
         <location>/errorHandleServlet</location>
     </error-page>
-
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath*:ecs/spring/context-*.xml</param-value>
-    </context-param>
 
     <servlet>
         <servlet-name>imsController</servlet-name>

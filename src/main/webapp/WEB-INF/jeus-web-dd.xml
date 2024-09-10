@@ -1,6 +1,68 @@
 <?xml version="1.0"?>
 <jeus-web-dd xmlns="http://www.tmaxsoft.com/xml/ns/jeus">
+<!--    <auto-reload>
+        <enable-reload>true</enable-reload>
+        <check-on-demand>false</check-on-demand>
+    </auto-reload>-->
 
+
+<!--    <content-encodings>
+        <content-encoding>
+            <mime-type>text/*</mime-type>
+            <compression>deflate</compression>
+            <compression>gzip</compression>
+            <compression>identity</compression>
+        </content-encoding>
+        <content-encoding>
+            <mime-type>image/png</mime-type>
+            <compression>deflate</compression>
+            <compression>identity</compression>
+        </content-encoding>
+        <content-encoding>
+            <mime-type>text/plain</mime-type>
+            <compression>identity</compression>
+        </content-encoding>
+    </content-encodings>-->
+
+<!--    <accept-encodings>
+        <accept-encoding>
+            <compression>gzip</compression>
+        </accept-encoding>
+        <accept-encoding>
+            <compression>deflate</compression>
+            <quality>0.444</quality>
+        </accept-encoding>
+        <accept-encoding>
+            <compression>identity</compression>
+            <quality>0.444</quality>
+        </accept-encoding>
+    </accept-encodings>-->
+  <!--  <thread-pool>
+        <base>
+            <name>base</name>
+            <min>1</min>
+            <max>5</max>
+        </base>
+        <service-group>
+            <name>svcg1</name>
+            <uri>/service1,/service2</uri>
+            <min>10</min>
+            <max>20</max>
+        </service-group>
+        <service-group>
+            <name>longerJsp</name>
+            <uri>/jsp/servlet/asyncContext.jsp</uri>
+            <min>5</min>
+            <max>10</max>
+        </service-group>
+        <service-group>
+            <name>Jsp</name>
+            <uri>/jsp/servlet</uri>
+            <min>1</min>
+            <max>5</max>
+        </service-group>
+    </thread-pool>
+    <attach-stacktrace-on-error>true</attach-stacktrace-on-error>-->
     <!-- the URL path of the context.  -->
    <!-- <enable-jsp>true</enable-jsp> -->
 
@@ -31,4 +93,7 @@
         </dispatch-thread-pool>
     </async-config>
     <node-java-context>false</node-java-context> -->
+    <!--<websocket>
+        <blocking-send-timeout-in-millis>5000</blocking-send-timeout-in-millis>
+    </websocket>-->
 </jeus-web-dd>
