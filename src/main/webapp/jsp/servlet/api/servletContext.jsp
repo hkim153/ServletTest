@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<a href="../../../html/servletApi.html"><h1>jakarta.servlet</h1></a>
+<h1>Package <a href="../../../html/servlet/servletPackageApi.html">jakarta.servlet</a></h1>
 <h1>ServletContext</h1>
 <hr>
 
@@ -67,7 +67,8 @@
 
 <h1>Test</h1>
 <ul>
-    <li><a href="servletContextGetRequestedDispatcher.jsp">public RequestDispatcher getRequestDispatcher(String path)</a></li>
+    <li><a href="servletContextGetRequestedDispatcher.jsp">public RequestDispatcher getRequestDispatcher(String
+        path)</a></li>
     <li><a href="servletContextGetNamedDispatcher.jsp">public RequestDispatcher getNamedDispatcher(String name)</a></li>
 </ul>
 

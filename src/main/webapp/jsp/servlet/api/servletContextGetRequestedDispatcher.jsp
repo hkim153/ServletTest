@@ -12,7 +12,7 @@
 </head>
 <body>
 
-<a href="../../../html/servletApi.html"><h1>jakarta.servlet</h1></a>
+<a href="../../../html/servlet/servletPackageApi.html"><h1>jakarta.servlet</h1></a>
 <a href="servletContext.jsp"><h1>ServletContext</h1></a>
 <h1>public RequestDispatcher getRequestDispatcher(String path)</h1>
 <hr>
