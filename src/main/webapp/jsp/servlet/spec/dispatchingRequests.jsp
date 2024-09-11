@@ -11,14 +11,18 @@
     <title>9. Dispatching Requests</title>
 </head>
 <body>
-Relevant API
+
+<h1>Dispatching Requests</h1>
+<h2>Relevant API</h2>
 <ul>
     <li><a href="../api/requestDispatcher.jsp">jakarta.servlet.RequestDispatcher</a></li>
     <li><a href="../api/servletContextGetRequestedDispatcher.jsp">jakarta.servlet.ServletContext public
         RequestDispatcher getRequestDispatcher(String path)</a></li>
+    <li><a href="../api/servletContextGetNamedDispatcher.jsp">jakarta.servlet.ServletContext public RequestDispatcher
+        getNamedDispatcher(String name)</a></li>
 </ul>
-
-<a href="https://jakarta.ee/specifications/servlet/5.0/jakarta-servlet-spec-5.0#dispatching-requests">link</a>
+<a href="https://jakarta.ee/specifications/servlet/5.0/jakarta-servlet-spec-5.0#dispatching-requests"><h2>link</h2></a>
+<hr>
 
 <h2>9. Dispatching Requests</h2>
 
@@ -52,7 +56,8 @@ Relevant API
     <a href="">Chapter 12, <em>Mapping Requests to Servlets</em></a>, wraps
     it with a <code>RequestDispatcher</code> object, and returns the resulting object.
     If no servlet can be resolved based on the given path, a
-    <code>RequestDispatcher</code> is provided that returns the content for that path.</p>
+    <code>RequestDispatcher</code> is provided that returns the content for that path.
+</p>
 
 <p>The <code>getNamedDispatcher</code> method takes a
     <code>String</code> argument indicating the name of a servlet known to the
@@ -64,7 +69,8 @@ Relevant API
     obtained using relative paths that are relative to the path of the
     current request (not relative to the root of the <code>ServletContext</code>), the
     <code>getRequestDispatcher</code> method is provided in the <code>ServletRequest</code>
-    interface.</p>
+    interface.
+</p>
 
 <p>The behavior of this method is similar to the
     method of the same name in the <code>ServletContext</code>. The servlet container
@@ -73,25 +79,29 @@ Relevant API
     context rooted at <code>"/"</code> and a request to
     <code>/garden/tools.html</code>, a request dispatcher obtained via
     <code>ServletRequest.getRequestDispatcher("header.html")</code> will behave exactly like a call to
-    <code>ServletContext.getRequestDispatcher("/garden/header.html")</code>.</p>
+    <code>ServletContext.getRequestDispatcher("/garden/header.html")</code>.
+</p>
 
 <h4>9.1.1. Query Strings in Request Dispatcher Paths</h4>
 <p>The <code>ServletContext</code> and <code>ServletRequest</code>
     methods that create <code>RequestDispatcher</code> objects using path information
     allow the optional attachment of query string information to the path.
     For example, an Application Developer may obtain a <code>RequestDispatcher</code> by using the
-    following code:</p>
+    following code:
+</p>
 <pre class="CodeRay highlight"><code data-lang="java"><span class="predefined-type">String</span> path = <span
         class="string"><span class="delimiter">&quot;</span><span class="content">/raisins.jsp?orderno=5</span><span
         class="delimiter">&quot;</span></span>;
 RequestDispatcher rd = context.getRequestDispatcher(path);
-rd.include(request, response);</code></pre>
+rd.include(request, response);</code>
+</pre>
 
 <p>Parameters specified in the query string used
     to create the <code>RequestDispatcher</code> take precedence over other parameters
     of the same name passed to the included servlet. The parameters
     associated with a <code>RequestDispatcher</code> are scoped to apply only for the
-    duration of the <code>include</code> or <code>forward</code> call.</p>
+    duration of the <code>include</code> or <code>forward</code> call.
+</p>
 
 <h3>9.2. Using a Request Dispatcher</h3>
 <p>To use a request dispatcher, a servlet calls
@@ -102,18 +112,24 @@ rd.include(request, response);</code></pre>
     instances of subclasses of the request and response wrapper classes that
     were introduced for version 2.3 of the specification. In the latter
     case, the wrapper instances must wrap the request or response objects
-    that the container passed into the <code>service</code> method.</p>
+    that the container passed into the <code>service</code> method.
+</p>
 
-<p>The Container Provider should ensure that the
+<p>
+    The Container Provider should ensure that the
     dispatch of the request to a target servlet occurs in the same thread of
-    the same JVM as the original request.</p>
+    the same JVM as the original request.
+</p>
 
 <h3>9.3. The Include Method</h3>
-<p>The <code>include</code> method of the
+<p>
+    The <code>include</code> method of the
     <code>RequestDispatcher</code> interface may be called at any time. The target
     servlet of the <code>include</code> method has access to all aspects of the request
-    object, but its use of the response object is more limited.</p>
-<p>It can only write information to the
+    object, but its use of the response object is more limited.
+</p>
+<p>
+    It can only write information to the
     <code>ServletOutputStream</code> or <code>Writer</code> of the response object and commit a
     response by writing content past the end of the response buffer, or by
     explicitly calling the <code>flushBuffer</code> method of the <code>ServletResponse</code>
@@ -125,17 +141,22 @@ rd.include(request, response);</code></pre>
     <code>HttpServletRequest.getSession()</code> or
     <code>HttpServletRequest.getSession(boolean)</code> that would require adding a
     Cookie response header must throw an <code>IllegalStateException</code> if the
-    response has been committed.</p>
-<p>If the default servlet is the target of a
+    response has been committed.
+</p>
+<p>
+    If the default servlet is the target of a
     RequestDispatch.include() and the requested resource does not exist,
     then the default servlet MUST throw <code>FileNotFoundException</code>. If the
     exception isn&#8217;t caught and handled, and the response hasn’t been
-    committed, the status code MUST be set to 500.</p>
+    committed, the status code MUST be set to 500.
+</p>
 <h4>9.3.1. Included Request Parameters</h4>
-<p>Except for servlets obtained by using the
+<p>
+    Except for servlets obtained by using the
     <code>getNamedDispatcher</code> method, a servlet that has been invoked by another
     servlet using the <code>include</code> method of <code>RequestDispatcher</code> has access to
-    the path by which it was invoked.</p>
+    the path by which it was invoked.
+</p>
 <p>The following request attributes must be set:</p>
 <pre class="CodeRay highlight"><code>jakarta.servlet.include.request_uri
 jakarta.servlet.include.context_path
@@ -143,22 +164,28 @@ jakarta.servlet.include.servlet_path
 jakarta.servlet.include.mapping
 jakarta.servlet.include.path_info
 jakarta.servlet.include.query_string</code></pre>
-<p>These attributes are accessible from the
+<p>
+    These attributes are accessible from the
     included servlet via the <code>getAttribute</code> method on the request object and
     their values must be equal to the request URI, context path, servlet
     path, path info, and query string of the included servlet, respectively.
     If the request is subsequently included, these attributes are replaced
-    for that include.</p>
-<p>If the included servlet was obtained by using
-    the <code>getNamedDispatcher</code> method, these attributes must not be set.</p>
+    for that include.
+</p>
+<p>
+    If the included servlet was obtained by using
+    the <code>getNamedDispatcher</code> method, these attributes must not be set.
+</p>
 
 <h3>9.4. The Forward Method</h3>
-<p>The <code>forward</code> method of the
+<p>
+    The <code>forward</code> method of the
     <code>RequestDispatcher</code> interface may be called by the calling servlet only
     when no output has been committed to the client. If output data exists
     in the response buffer that has not been committed, the content must be
     cleared before the target servlet’s <code>service</code> method is called. If the
-    response has been committed, an <code>IllegalStateException</code> must be thrown.</p>
+    response has been committed, an <code>IllegalStateException</code> must be thrown.
+</p>
 <p>The path elements of the request object
     exposed to the target servlet must reflect the path used to obtain the
     <code>RequestDispatcher</code>.</p>
