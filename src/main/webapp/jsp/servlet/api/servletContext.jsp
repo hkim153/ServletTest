@@ -46,6 +46,7 @@
     @see Servlet#getServletConfig
     @see ServletConfig#getServletContext
 </p>
+<h2>Field Summary</h2>
 <p>
     The name of the <tt>ServletContext</tt> attribute which stores
     the private temporary directory (of type <tt>java.io.File</tt>)
@@ -65,12 +66,14 @@
     public static final String ORDERED_LIBS = "javax.servlet.context.orderedLibs";
 </p>
 
-<h1>Test</h1>
+<h2>Method Summary</h2>
 <ul>
-    <li><a href="servletContextGetRequestedDispatcher.jsp">public RequestDispatcher getRequestDispatcher(String
-        path)</a></li>
+    <li><a href="servletContextGetRequestedDispatcher.jsp">public RequestDispatcher getRequestDispatcher(String path)</a></li>
     <li><a href="servletContextGetNamedDispatcher.jsp">public RequestDispatcher getNamedDispatcher(String name)</a></li>
 </ul>
+<hr>
+
+<h1>Test</h1>
 
 </body>
 </html>
