@@ -20,6 +20,8 @@
         RequestDispatcher getRequestDispatcher(String path)</a></li>
     <li><a href="../api/servletContextGetNamedDispatcher.jsp">jakarta.servlet.ServletContext public RequestDispatcher
         getNamedDispatcher(String name)</a></li>
+    <li><a href="../api/servletRequestGetRequestDispatcher.jsp">jakarta.servlet.ServletRequest public RequestDispatcher
+        getRequestDispatcher(String path)</a></li>
 </ul>
 <a href="https://jakarta.ee/specifications/servlet/5.0/jakarta-servlet-spec-5.0#dispatching-requests"><h2>link</h2></a>
 <hr>
