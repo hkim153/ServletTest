@@ -1,7 +1,7 @@
 package listener;
 
-import javax.servlet.http.HttpSessionEvent;
-import javax.servlet.http.HttpSessionIdListener;
+import jakarta.servlet.http.HttpSessionEvent;
+import jakarta.servlet.http.HttpSessionIdListener;
 
 public class HttpSessionIdListenerTest implements HttpSessionIdListener {
 

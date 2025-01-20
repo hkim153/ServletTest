@@ -1,7 +1,7 @@
 package listener;
 
-import javax.servlet.http.HttpSessionActivationListener;
-import javax.servlet.http.HttpSessionEvent;
+import jakarta.servlet.http.HttpSessionActivationListener;
+import jakarta.servlet.http.HttpSessionEvent;
 
 public class HttpSessionActivationListenerTest implements HttpSessionActivationListener {
 

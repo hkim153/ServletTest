@@ -2,9 +2,9 @@ package servlet.async;
 
 import java.io.PrintWriter;
 
-import javax.servlet.AsyncContext;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import jakarta.servlet.AsyncContext;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
 
 public class AsyncTask implements Runnable{
 	AsyncContext ac = null;

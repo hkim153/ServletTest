@@ -3,12 +3,12 @@ package webSocket;
 
 import java.io.IOException;
 
-import javax.websocket.CloseReason;
-import javax.websocket.Endpoint;
-import javax.websocket.EndpointConfig;
-import javax.websocket.MessageHandler;
-import javax.websocket.RemoteEndpoint;
-import javax.websocket.Session;
+import jakarta.websocket.CloseReason;
+import jakarta.websocket.Endpoint;
+import jakarta.websocket.EndpointConfig;
+import jakarta.websocket.MessageHandler;
+import jakarta.websocket.RemoteEndpoint;
+import jakarta.websocket.Session;
 
 public class ProgrammaticServerEndpoint extends Endpoint{
 

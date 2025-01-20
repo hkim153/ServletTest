@@ -4,12 +4,12 @@
  * import java.io.IOException; import java.net.URI; import
  * java.net.URISyntaxException; import java.util.HashMap;
  * 
- * import javax.websocket.ClientEndpoint; import
- * javax.websocket.ContainerProvider; import
- * javax.websocket.DeploymentException; import javax.websocket.EncodeException;
- * import javax.websocket.OnClose; import javax.websocket.OnError; import
- * javax.websocket.OnMessage; import javax.websocket.OnOpen; import
- * javax.websocket.Session; import javax.websocket.WebSocketContainer;
+ * import jakarta.websocket.ClientEndpoint; import
+ * jakarta.websocket.ContainerProvider; import
+ * jakarta.websocket.DeploymentException; import jakarta.websocket.EncodeException;
+ * import jakarta.websocket.OnClose; import jakarta.websocket.OnError; import
+ * jakarta.websocket.OnMessage; import jakarta.websocket.OnOpen; import
+ * jakarta.websocket.Session; import jakarta.websocket.WebSocketContainer;
  * 
  * @ClientEndpoint public class AnnotatedClientEndpoint { private Session
  * userSession = null; private static HashMap<AnnotatedClientEndpoint, String>

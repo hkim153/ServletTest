@@ -22,7 +22,7 @@
 	<hr>
 	
 	<h2>MappingMatch</h2>
-	MappingMatch는 javax에서 정의한 Enum 객체로서,호출된 url과 servlet사이의 맵핑 타입을 설명해준다.</br>
+	MappingMatch는 jakarta에서 정의한 Enum 객체로서,호출된 url과 servlet사이의 맵핑 타입을 설명해준다.</br>
 	<ol>
 		<li>CONTEXT_ROOT: 앱의 context root와 url이 매치될 때
 		<li>DEFAULT: url이 '/'로 Servlet이랑 매치될 때

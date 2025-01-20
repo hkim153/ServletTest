@@ -52,7 +52,7 @@
     the private temporary directory (of type <tt>java.io.File</tt>)
     provided by the servlet container for the <tt>ServletContext</tt>
 
-    public static final String TEMPDIR = "javax.servlet.context.tempdir";
+    public static final String TEMPDIR = "jakarta.servlet.context.tempdir";
 </p>
 <p>
     The name of the <code>ServletContext</code> attribute whose value
@@ -63,7 +63,7 @@
     <code>&lt;others/&gt;</code> is being used), or null if no
     absolute or relative ordering has been specified
 
-    public static final String ORDERED_LIBS = "javax.servlet.context.orderedLibs";
+    public static final String ORDERED_LIBS = "jakarta.servlet.context.orderedLibs";
 </p>
 
 <h2>Method Summary</h2>

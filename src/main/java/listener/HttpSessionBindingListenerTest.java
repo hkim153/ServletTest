@@ -1,7 +1,7 @@
 package listener;
 
-import javax.servlet.http.HttpSessionBindingEvent;
-import javax.servlet.http.HttpSessionBindingListener;
+import jakarta.servlet.http.HttpSessionBindingEvent;
+import jakarta.servlet.http.HttpSessionBindingListener;
 
 public class HttpSessionBindingListenerTest implements HttpSessionBindingListener {
 

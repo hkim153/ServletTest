@@ -1,11 +1,11 @@
 /*
 package webSocket;
 
-import javax.websocket.OnClose;
-import javax.websocket.OnError;
-import javax.websocket.OnMessage;
-import javax.websocket.OnOpen;
-import javax.websocket.server.ServerEndpoint;
+import jakarta.websocket.OnClose;
+import jakarta.websocket.OnError;
+import jakarta.websocket.OnMessage;
+import jakarta.websocket.OnOpen;
+import jakarta.websocket.server.ServerEndpoint;
 
 @ServerEndpoint(value = "/websocket")
 public class AnnotatedServerEndpoint {

@@ -1,7 +1,7 @@
 package listener;
 
-import javax.servlet.ServletRequestAttributeEvent;
-import javax.servlet.ServletRequestAttributeListener;
+import jakarta.servlet.ServletRequestAttributeEvent;
+import jakarta.servlet.ServletRequestAttributeListener;
 
 public class ServletRequestAttributeListenerTest implements ServletRequestAttributeListener{
 

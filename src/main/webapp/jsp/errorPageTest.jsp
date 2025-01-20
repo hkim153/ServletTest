@@ -39,11 +39,11 @@
 			<ol>
 				<li>오류가 발생하면 서버에서 request객체에 attribute로 다음의 key와 정보를 저장한다<br/>
 					<ul>
-						<li>javax.servlet.error.status_code
-						<li>javax.servlet.error.exception_type
-						<li>javax.servlet.error.message
-						<li>javax.servlet.error.exception
-						<li>javax.servlet.error.request_uri
+						<li>jakarta.servlet.error.status_code
+						<li>jakarta.servlet.error.exception_type
+						<li>jakarta.servlet.error.message
+						<li>jakarta.servlet.error.exception
+						<li>jakarta.servlet.error.request_uri
 					</ul>
 				</li>
 				<li>
