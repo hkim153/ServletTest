@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-<web-app xmlns="http://java.sun.com/xml/ns/javaee"
-	     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	     xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-	     version="3.0">
--->
-<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
 
 <!--<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">-->
+
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
-        version="4.0">-->
+        version="4.0">
 
     <!-- 태그 순서
   	<display-name>
@@ -59,7 +54,7 @@
     <!-- Filter & Filter-Mapping -->
     <filter>
         <filter-name>filterOne</filter-name>
-        <filter-class>filter.FilterOne</filter-class>
+        <filter-class>app.servlet.filter.FilterOne</filter-class>
         <init-param>
             <param-name>filterOneParam</param-name>
             <param-value>this is FilterOne Param in web.xml</param-value>
@@ -68,7 +63,7 @@
 
     <filter>
         <filter-name>filterTwo</filter-name>
-        <filter-class>filter.FilterTwo</filter-class>
+        <filter-class>app.servlet.filter.FilterTwo</filter-class>
         <init-param>
             <param-name>filterTwoParam</param-name>
             <param-value>this is FilterTwo Param in web.xml</param-value>
@@ -92,45 +87,45 @@
 
     <!-- Listener -->
     <listener>
-        <listener-class>listener.HttpSessionActivationListenerTest</listener-class>
+        <listener-class>app.servlet.listener.HttpSessionActivationListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.HttpSessionAttributeListenerTest</listener-class>
+        <listener-class>app.servlet.listener.HttpSessionAttributeListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.HttpSessionBindingListenerTest</listener-class>
+        <listener-class>app.servlet.listener.HttpSessionBindingListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.HttpSessionIdListenerTest</listener-class>
+        <listener-class>app.servlet.listener.HttpSessionIdListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.HttpSessionListenerTest</listener-class>
+        <listener-class>app.servlet.listener.HttpSessionListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.ServletContextAttributeListenerTest</listener-class>
+        <listener-class>app.servlet.listener.ServletContextAttributeListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.ServletContextListenerTest</listener-class>
+        <listener-class>app.servlet.listener.ServletContextListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.ServletRequestAttributeListenerTest</listener-class>
+        <listener-class>app.servlet.listener.ServletRequestAttributeListenerTest</listener-class>
     </listener>
 
     <listener>
-        <listener-class>listener.ServletRequestListenerTest</listener-class>
+        <listener-class>app.servlet.listener.ServletRequestListenerTest</listener-class>
     </listener>
 
     <!-- Servlet & Servlet-Mapping -->
     <servlet>
         <servlet-name>postParam</servlet-name>
-        <servlet-class>servlet.PostParam</servlet-class>
+        <servlet-class>app.servlet.PostParam</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>postParam</servlet-name>
@@ -139,7 +134,7 @@
 
     <servlet>
         <servlet-name>httpServletTest</servlet-name>
-        <servlet-class>servlet.HttpServletTest</servlet-class>
+        <servlet-class>app.servlet.HttpServletTest</servlet-class>
         <init-param>
             <param-name>initParam</param-name>
             <param-value>this is initParam in web.xml</param-value>
@@ -152,7 +147,7 @@
 
     <servlet>
         <servlet-name>servletContextTest</servlet-name>
-        <servlet-class>servlet.ServletContextTest</servlet-class>
+        <servlet-class>app.servlet.ServletContextTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>servletContextTest</servlet-name>
@@ -161,7 +156,7 @@
 
     <servlet>
         <servlet-name>cookieTest</servlet-name>
-        <servlet-class>servlet.CookieTest</servlet-class>
+        <servlet-class>app.servlet.CookieTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>cookieTest</servlet-name>
@@ -170,7 +165,7 @@
 
     <servlet>
         <servlet-name>httpSessionCreate</servlet-name>
-        <servlet-class>servlet.HttpSessionCreate</servlet-class>
+        <servlet-class>app.servlet.HttpSessionCreate</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>httpSessionCreate</servlet-name>
@@ -179,7 +174,7 @@
 
     <servlet>
         <servlet-name>httpSessionRecreate</servlet-name>
-        <servlet-class>servlet.HttpSessionRecreate</servlet-class>
+        <servlet-class>app.servlet.HttpSessionRecreate</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>httpSessionRecreate</servlet-name>
@@ -188,7 +183,7 @@
 
     <servlet>
         <servlet-name>sendRedirectTest</servlet-name>
-        <servlet-class>servlet.SendRedirectTest</servlet-class>
+        <servlet-class>app.servlet.SendRedirectTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>sendRedirectTest</servlet-name>
@@ -197,7 +192,7 @@
 
     <servlet>
         <servlet-name>sendRedirectTestResult</servlet-name>
-        <servlet-class>servlet.SendRedirectTestResult</servlet-class>
+        <servlet-class>app.servlet.SendRedirectTestResult</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>sendRedirectTestResult</servlet-name>
@@ -206,7 +201,7 @@
 
     <servlet>
         <servlet-name>requestDispatcherTest</servlet-name>
-        <servlet-class>servlet.RequestDispatcherTest</servlet-class>
+        <servlet-class>app.servlet.RequestDispatcherTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>requestDispatcherTest</servlet-name>
@@ -215,7 +210,7 @@
 
     <servlet>
         <servlet-name>requestDispatcherTestResult</servlet-name>
-        <servlet-class>servlet.RequestDispatcherTestResult</servlet-class>
+        <servlet-class>app.servlet.RequestDispatcherTestResult</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>requestDispatcherTestResult</servlet-name>
@@ -224,7 +219,7 @@
 
     <servlet>
         <servlet-name>filterServletOne</servlet-name>
-        <servlet-class>servlet.FilterServletOne</servlet-class>
+        <servlet-class>app.servlet.FilterServletOne</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>filterServletOne</servlet-name>
@@ -233,7 +228,7 @@
 
     <servlet>
         <servlet-name>filterServletTwo</servlet-name>
-        <servlet-class>servlet.FilterServletTwo</servlet-class>
+        <servlet-class>app.servlet.FilterServletTwo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>filterServletTwo</servlet-name>
@@ -242,7 +237,7 @@
 
     <servlet>
         <servlet-name>errorHandleServlet</servlet-name>
-        <servlet-class>servlet.ErrorHandleServlet</servlet-class>
+        <servlet-class>app.servlet.ErrorHandleServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>errorHandleServlet</servlet-name>
@@ -251,7 +246,7 @@
 
     <servlet>
         <servlet-name>errorCauseServlet</servlet-name>
-        <servlet-class>servlet.ErrorCauseServlet</servlet-class>
+        <servlet-class>app.servlet.ErrorCauseServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>errorCauseServlet</servlet-name>
@@ -260,7 +255,7 @@
 
     <servlet>
         <servlet-name>asyncContextTest</servlet-name>
-        <servlet-class>servlet.async.AsyncContextTest</servlet-class>
+        <servlet-class>app.servlet.async.AsyncContextTest</servlet-class>
         <async-supported>true</async-supported>
     </servlet>
     <servlet-mapping>
@@ -270,7 +265,7 @@
 
     <servlet>
         <servlet-name>httpSessionidChange</servlet-name>
-        <servlet-class>servlet.HttpSessionidChange</servlet-class>
+        <servlet-class>app.servlet.HttpSessionidChange</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>httpSessionidChange</servlet-name>
@@ -279,7 +274,7 @@
 
     <servlet>
         <servlet-name>stateInfo</servlet-name>
-        <servlet-class>servlet.StateInfo</servlet-class>
+        <servlet-class>app.servlet.StateInfo</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>stateInfo</servlet-name>
@@ -288,7 +283,7 @@
 
     <servlet>
         <servlet-name>hsm</servlet-name>
-        <servlet-class>servlet.HttpServletMappingTest</servlet-class>
+        <servlet-class>app.servlet.HttpServletMappingTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>hsm</servlet-name>
@@ -299,7 +294,7 @@
 
     <servlet>
         <servlet-name>registrationTest</servlet-name>
-        <servlet-class>servlet.regist.RegistrationTest</servlet-class>
+        <servlet-class>app.servlet.regist.RegistrationTest</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationTest</servlet-name>
@@ -308,7 +303,7 @@
 
     <servlet>
         <servlet-name>nioServlet</servlet-name>
-        <servlet-class>servlet.nio.NioServlet</servlet-class>
+        <servlet-class>app.servlet.nio.NioServlet</servlet-class>
         <async-supported>true</async-supported>
     </servlet>
     <servlet-mapping>
@@ -319,7 +314,7 @@
     <!-- ims servlet -->
     <servlet>
         <servlet-name>bigBodyServlet</servlet-name>
-        <servlet-class>servlet.test.BigBodyServlet</servlet-class>
+        <servlet-class>app.servlet.test.BigBodyServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>bigBodyServlet</servlet-name>
@@ -328,7 +323,7 @@
 
     <servlet>
         <servlet-name>IMS248744</servlet-name>
-        <servlet-class>ims.IMS248744</servlet-class>
+        <servlet-class>app.test.IMS248744</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IMS248744</servlet-name>
@@ -337,7 +332,7 @@
 
     <servlet>
         <servlet-name>IMS248744Result</servlet-name>
-        <servlet-class>ims.IMS248744Result</servlet-class>
+        <servlet-class>app.test.IMS248744Result</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IMS248744Result</servlet-name>
@@ -346,7 +341,7 @@
 
     <servlet>
         <servlet-name>IMS253951</servlet-name>
-        <servlet-class>ims.IMS253951</servlet-class>
+        <servlet-class>app.test.IMS253951</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IMS253951</servlet-name>
@@ -355,7 +350,7 @@
 
     <servlet>
         <servlet-name>IMS301143</servlet-name>
-        <servlet-class>ims.IMS301143</servlet-class>
+        <servlet-class>app.test.IMS301143</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IMS301143</servlet-name>
@@ -364,7 +359,7 @@
 
     <servlet>
         <servlet-name>IMS301941</servlet-name>
-        <servlet-class>ims.IMS301941</servlet-class>
+        <servlet-class>app.test.IMS301941</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>IMS301941</servlet-name>
@@ -373,7 +368,7 @@
 
     <servlet>
         <servlet-name>ThreadLocalServlet</servlet-name>
-        <servlet-class>ims.ThreadLocalServlet</servlet-class>
+        <servlet-class>app.test.ThreadLocalServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>ThreadLocalServlet</servlet-name>
@@ -401,7 +396,7 @@
 
     <servlet>
         <servlet-name>imsController</servlet-name>
-        <servlet-class>control.IMSController</servlet-class>
+        <servlet-class>app.Controller</servlet-class>
         <init-param>
             <param-name>config</param-name>
             <param-value>/resource/imsCommand.properties</param-value>
