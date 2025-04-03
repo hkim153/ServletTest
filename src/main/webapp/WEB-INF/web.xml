@@ -394,6 +394,11 @@
         <location>/errorHandleServlet</location>
     </error-page>
 
+    <error-page>
+        <error-code>530</error-code>
+        <location>/errorPageFor530</location>
+    </error-page>
+
     <servlet>
         <servlet-name>imsController</servlet-name>
         <servlet-class>app.Controller</servlet-class>
