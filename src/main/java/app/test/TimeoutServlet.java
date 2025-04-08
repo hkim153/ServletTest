@@ -10,23 +10,58 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/TimeoutServlet")
+@WebServlet("/timeoutServlet")
 public class TimeoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-        int number = 0;
-        String timeout = req.getParameter("timeout");
-        int time = Integer.parseInt(timeout);
+        String message;
+        String messageParam = req.getParameter("msg");
+        if(messageParam != null)
+        {
+            message = messageParam;
+        }
+        else
+        {
+            message = "testMessage";
+        }
+        int timeoutInMillie;
+        String timeoutParam = req.getParameter("timeout");
+        if(timeoutParam != null)
+        {
+            timeoutInMillie = Integer.parseInt(timeoutParam);
+        }
+        else
+        {
+            timeoutInMillie = 1000;
+        }
+        int num;
+        String numParam = req.getParameter("num");
+        if(numParam != null)
+        {
+            num = Integer.parseInt(numParam);
+        }
+        else
+        {
+            num = 10;
+        }
+
+
         res.setContentType("text/html; charset=utf-8");
         PrintWriter out = res.getWriter();
-        while(number++<time) {
+        out.println("<html><body><h2> 처리결과</h2>");
+        int count = 1;
+        while(count <= num) {
+            out.print("Count " + count + ": " + message + "<br>");
+            out.flush();
+            System.out.println("Count " + count + ": " + message + "<br>");
             try {
-                Thread.sleep(1000);
+                Thread.sleep(timeoutInMillie);
             }catch(Exception e) {
                 System.out.println(e);
             }
+            count++;
         }
-        out.println("<h2> done! " +  "</h2>");
+        out.println("<h2> done </h2>");
+        out.println("</body></html>");
         out.close();
     }
-
 }
