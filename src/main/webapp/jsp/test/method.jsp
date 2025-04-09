@@ -28,7 +28,7 @@
 	<% 		
 			session.invalidate();
 			session = request.getSession();
-			String url = response.encodeURL("../postParam");
+			String url = response.encodeURL("../../postParam");
 	%>
 	새로 생성된 session id = <%=session.getId() %> <br>
 	changeSessionId() 로 변경한 session id = <%=request.changeSessionId() %> <br>

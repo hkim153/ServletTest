@@ -124,15 +124,6 @@
 
     <!-- Servlet & Servlet-Mapping -->
     <servlet>
-        <servlet-name>postParam</servlet-name>
-        <servlet-class>app.servlet.PostParam</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>postParam</servlet-name>
-        <url-pattern>/postParam/*</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <servlet-name>httpServletTest</servlet-name>
         <servlet-class>app.servlet.HttpServletTest</servlet-class>
         <init-param>
@@ -270,15 +261,6 @@
     <servlet-mapping>
         <servlet-name>httpSessionidChange</servlet-name>
         <url-pattern>/httpSessionidChange</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>stateInfo</servlet-name>
-        <servlet-class>app.servlet.StateInfo</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>stateInfo</servlet-name>
-        <url-pattern>/stateInfo</url-pattern>
     </servlet-mapping>
 
     <servlet>
