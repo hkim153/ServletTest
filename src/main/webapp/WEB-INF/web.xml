@@ -399,16 +399,17 @@
         <location>/errorPageFor530</location>
     </error-page>
 
+    <!--DONE -->
     <servlet>
-        <servlet-name>imsController</servlet-name>
+        <servlet-name>controller</servlet-name>
         <servlet-class>app.Controller</servlet-class>
         <init-param>
             <param-name>config</param-name>
-            <param-value>/resource/imsCommand.properties</param-value>
+            <param-value>/resource/control.properties</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>imsController</servlet-name>
+        <servlet-name>controller</servlet-name>
         <url-pattern>*.ims</url-pattern>
     </servlet-mapping>
 </web-app>
