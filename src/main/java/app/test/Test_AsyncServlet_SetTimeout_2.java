@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/ims340386_2", asyncSupported = true)
-public class IMS340386_2 extends HttpServlet
+@WebServlet(value = "/test_asyncServlet_setTimeout_2", asyncSupported = true)
+public class Test_AsyncServlet_SetTimeout_2 extends HttpServlet
 {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException

@@ -9,8 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value="/ims302847")
-public class IMS302847 extends HttpServlet
+//ims-302847
+@WebServlet(value="/test_Invalid_Character_In_QueryString_Servlet")
+public class Test_Invalid_Character_In_QueryString_Servlet extends HttpServlet
 {
     @Override
     public  void doGet(HttpServletRequest req, HttpServletResponse resp)

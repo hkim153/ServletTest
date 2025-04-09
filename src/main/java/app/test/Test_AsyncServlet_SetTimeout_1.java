@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/ims340386_1", asyncSupported = true)
-public class IMS340386_1 extends HttpServlet
+@WebServlet(value = "/test_asyncServlet_setTimeout_1", asyncSupported = true)
+public class Test_AsyncServlet_SetTimeout_1 extends HttpServlet
 {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -69,7 +69,7 @@ public class IMS340386_1 extends HttpServlet
             }
 
             System.out.println("Done wait and dispatch the request");
-            asyncContext.dispatch("/ims340386_2");
+            asyncContext.dispatch("/test_asyncServlet_setTimeout_2");
         }
     }
 }
