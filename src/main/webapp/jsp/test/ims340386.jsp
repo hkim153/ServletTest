@@ -13,7 +13,8 @@
 <body>
 <form action="../../ims340386_1" method="post">
 
-    text: <input type="text" name="text"> <br/>
+    asyncTimeout: <input type="text" name="asyncTimeout"> <br/>
+    sleepTimeout: <input type="text" name="sleepTimeout"> <br/>
 
     <input type="submit" value="완료">
     <input type="reset" value="다시작성">

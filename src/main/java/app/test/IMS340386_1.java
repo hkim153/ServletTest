@@ -1,7 +1,7 @@
 package app.test;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.concurrent.Executors;
 
 import javax.servlet.AsyncContext;
 import javax.servlet.ServletException;
@@ -10,18 +10,67 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value="/ims340386_1", asyncSupported = true)
+@WebServlet(value = "/ims340386_1", asyncSupported = true)
 public class IMS340386_1 extends HttpServlet
 {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
     {
+        process(req, resp);
+    }
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        process(req, resp);
+    }
+    private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
+    {
+        int asyncTimeout = 0;
+        int sleepTimeout = Integer.MAX_VALUE;
+
+        String asyncTimeoutParam = req.getParameter("asyncTimeout");
+        if (asyncTimeoutParam != null)
+            asyncTimeout = Integer.parseInt(asyncTimeoutParam);
+
+        String sleepTimeoutParam = req.getParameter("sleepTimeout");
+        if (sleepTimeoutParam != null)
+            sleepTimeout = Integer.parseInt(sleepTimeoutParam);
+
         AsyncContext asyncContext = req.startAsync();
-        asyncContext.setTimeout(0);
-        resp.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = resp.getWriter();
-        resp.setContentLength(14);
-        out.write("I'm done!!!!!!");
-        out.flush();
+        asyncContext.setTimeout(asyncTimeout);
+
+        TestRunnable testRunnable = new TestRunnable(sleepTimeout, asyncContext);
+        Executors.newSingleThreadExecutor().execute(testRunnable);
+    }
+
+    private static class TestRunnable implements Runnable
+    {
+        private final int sleepTimeout ;
+        private final AsyncContext asyncContext;
+
+        public TestRunnable(int sleepTimeout, AsyncContext asyncContext)
+        {
+            this.sleepTimeout = sleepTimeout;
+            this.asyncContext = asyncContext;
+        }
+        @Override
+        public void run()
+        {
+            System.out.println("Wait for the timeout");
+
+            try
+            {
+                Thread.currentThread().sleep(sleepTimeout);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println("Interrupted");
+                throw new RuntimeException(e);
+            }
+
+            System.out.println("Done wait and dispatch the request");
+            asyncContext.dispatch("/ims340386_2");
+        }
     }
 }
+
