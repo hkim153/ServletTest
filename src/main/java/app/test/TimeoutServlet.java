@@ -43,7 +43,16 @@ public class TimeoutServlet extends HttpServlet {
         {
             num = 10;
         }
-
+        boolean isAutoFlush;
+        String autoFlush = req.getParameter("autoFlush");
+        if(autoFlush != null)
+        {
+            isAutoFlush = Boolean.parseBoolean(autoFlush);
+        }
+        else
+        {
+            isAutoFlush = true;
+        }
 
         res.setContentType("text/html; charset=utf-8");
         PrintWriter out = res.getWriter();
@@ -51,7 +60,8 @@ public class TimeoutServlet extends HttpServlet {
         int count = 1;
         while(count <= num) {
             out.print("Count " + count + ": " + message + "<br>");
-            out.flush();
+            if(isAutoFlush)
+                out.flush();
             System.out.println("Count " + count + ": " + message + "<br>");
             try {
                 Thread.sleep(timeoutInMillie);
