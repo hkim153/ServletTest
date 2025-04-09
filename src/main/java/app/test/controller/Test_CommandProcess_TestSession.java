@@ -1,17 +1,16 @@
-package app.test;
+package app.test.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import app.CommandProcess;
+import app.test.Test_CommandProcess;
 
-public class DuplicatedSessionId implements CommandProcess
+public class Test_CommandProcess_TestSession implements Test_CommandProcess
 {
 
     @Override
@@ -39,33 +38,8 @@ public class DuplicatedSessionId implements CommandProcess
         out.print("현재 세션 ID: " + session.getId() + "<br>");
 
         out.print("<br>");
-        out.print("한번더 삭제하고 만들자!!<br>");
+        out.print("삭제하고 리턴 !!<br>");
         session.invalidate();
-        session = request.getSession(true);
-        out.print("2번째 session id: " + session.getId() + "<br>");
-
-        out.print("<br>");
-        out.print("sessionid 변경해보자! <br>");
-        request.changeSessionId();
-        session = request.getSession(false);
-        out.print("최종 session id: " + session.getId() + "<br>");
-
-
-        out.print("<br>");
-        out.print("이번에는 cookie를 만들고 Expires 추가해보자!");
-
-        Cookie cookie = new Cookie("jsessionid", "testCookie");
-        cookie.setMaxAge(0);
-        cookie.setPath(request.getRequestURI());
-        response.addCookie(cookie);
-
-        Cookie cookie2 = new Cookie("a", "b");
-        cookie2.setPath(request.getRequestURI());
-        response.addCookie(cookie2);
-
-        Cookie cookie3 = new Cookie("b", "c");
-        cookie3.setPath(request.getRequestURI());
-        response.addCookie(cookie3);
 
         return null;
     }

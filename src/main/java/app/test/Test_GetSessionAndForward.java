@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,7 +12,8 @@ import javax.servlet.http.HttpSession;
 
 import app.servlet.SharedObject;
 
-public class IMS248744 extends HttpServlet {
+@WebServlet(value="/test_getSessionAndForward")
+public class Test_GetSessionAndForward extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
 		res.setContentType("text/html; charset=utf-8");
@@ -24,12 +26,12 @@ public class IMS248744 extends HttpServlet {
 		
 		String method = req.getParameter("m");
 		RequestDispatcher rd = null;
-		String path = null;
+		String path = "test_getSessionAndForwardResult";
 		if(method != null) {
 			if(method.equals("servlet")) {
-				path = "IMS248744Result";
+				path = "test_getSessionAndForwardResult";
 			}else if(method.equals("jsp")) {
-				path = "/jsp/IMS248744Result.jsp";
+				path = "/jsp/test/test_getSessionAndForwardResult.jsp";
 			}
 		}
 		//res.sendRedirect("IMS248744Result");

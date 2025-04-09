@@ -15,13 +15,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
-@WebServlet(description = "MultipartConfigAnnotationTest",
-        displayName = "MultipartConfigAnnotationTest",
-        name="multipartConfigAnnotationTest",
-        value="/multipartConfigAnnotationTest",
+@WebServlet(description = "Test_MultipartConfigAnnotation",
+        displayName = "Test_MultipartConfigAnnotation",
+        name="test_multipartConfigAnnotation",
+        value="/test_multipartConfigAnnotation",
         initParams = {@WebInitParam(name = "fileSize", value = "7333") })
 @MultipartConfig(location= "/Users/hyunsoo/Desktop/test/", fileSizeThreshold = 100)
-public class MultipartConfigAnnotationTest extends HttpServlet {
+public class Test_MultipartConfigAnnotation extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{

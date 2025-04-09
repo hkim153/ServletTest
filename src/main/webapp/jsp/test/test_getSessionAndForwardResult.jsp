@@ -1,4 +1,4 @@
-<%@page import="servlet.SharedObject"%>
+<%@page import="app.servlet.SharedObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,7 +14,7 @@
 	out.print("현재 Session ID: " + session.getId() + "<br>");
 	SharedObject sharedObject = (SharedObject)session.getAttribute("HttpSession");
 	if(sharedObject != null) {
-	out.print("Attribute 정보 : " + sharedObject.getCount() + ", " + sharedObject.getName()+ "<br>");
+		out.print("Attribute 정보 : " + sharedObject.getCount() + ", " + sharedObject.getName()+ "<br>");
 	}else {
 		out.print("Attribute 없음"+ "<br>");
 	}

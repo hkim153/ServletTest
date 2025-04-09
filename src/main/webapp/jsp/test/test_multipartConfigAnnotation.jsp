@@ -12,7 +12,7 @@
 </head>
 <body>
     <h1>Multipart Test</h1>
-    <form action="../../multipartConfigAnnotationTest" method="post" enctype="multipart/form-data">
+    <form action="../../test_multipartConfigAnnotation" method="post" enctype="multipart/form-data">
         이름 <input type="text" name="name"><br>
         설명 <textarea cols ="30" rows ="10" name="description"></textarea>
         파일 <input type="file" name="file"><br>

@@ -1,9 +1,8 @@
-package app;
+package app.test;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Properties;
 
@@ -14,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class Controller extends HttpServlet {
+public class Test_Controller extends HttpServlet {
 
     private Map<String, Object> commandMap = new HashMap<>();
 
@@ -31,15 +30,18 @@ public class Controller extends HttpServlet {
             throw new ServletException(e);
         }
 
-        Iterator iter = pr.keySet().iterator();
-        while(iter.hasNext()){
-            String command = (String) iter.next();
+        for(Object o : pr.keySet())
+        {
+            String command = (String) o;
             String className = pr.getProperty(command);
-            try{
-                Class commandClass = Class.forName(className);
+            try
+            {
+                Class<?> commandClass = Class.forName(className);
                 Object commandInstance = commandClass.getDeclaredConstructor().newInstance();
                 commandMap.put(command, commandInstance);
-            }catch (Exception e){
+            }
+            catch(Exception e)
+            {
                 throw new ServletException(e);
             }
         }
@@ -61,7 +63,7 @@ public class Controller extends HttpServlet {
             String command = request.getRequestURI();
             command = command.substring(request.getContextPath().length());
 
-            CommandProcess com = (CommandProcess) commandMap.get(command);
+            Test_CommandProcess com = (Test_CommandProcess) commandMap.get(command);
             if(com == null){
                 response.sendError(HttpServletResponse.SC_NOT_FOUND);
                 return;

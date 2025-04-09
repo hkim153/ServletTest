@@ -312,43 +312,6 @@
     </servlet-mapping>
 
     <!-- ims servlet -->
-
-    <servlet>
-        <servlet-name>IMS248744</servlet-name>
-        <servlet-class>app.test.IMS248744</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>IMS248744</servlet-name>
-        <url-pattern>/IMS248744</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>IMS248744Result</servlet-name>
-        <servlet-class>app.test.IMS248744Result</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>IMS248744Result</servlet-name>
-        <url-pattern>/IMS248744Result</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>IMS253951</servlet-name>
-        <servlet-class>app.test.IMS253951</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>IMS253951</servlet-name>
-        <url-pattern>/IMS253951</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>IMS301143</servlet-name>
-        <servlet-class>app.test.IMS301143</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>IMS301143</servlet-name>
-        <url-pattern>/IMS301143</url-pattern>
-    </servlet-mapping>
-
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
@@ -375,15 +338,15 @@
 
     <!--DONE -->
     <servlet>
-        <servlet-name>controller</servlet-name>
-        <servlet-class>app.Controller</servlet-class>
+        <servlet-name>test_controller</servlet-name>
+        <servlet-class>app.test.Test_Controller</servlet-class>
         <init-param>
             <param-name>config</param-name>
             <param-value>/resource/control.properties</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
-        <servlet-name>controller</servlet-name>
-        <url-pattern>*.ims</url-pattern>
+        <servlet-name>test_controller</servlet-name>
+        <url-pattern>*.test</url-pattern>
     </servlet-mapping>
 </web-app>
