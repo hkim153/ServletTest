@@ -11,7 +11,7 @@
 <body>
 파일 업로드 결과 : 
 <%
-request.setCharacterEncoding("EUC-KR");
+request.setCharacterEncoding("UTF-8");
 
 String cotentType = request.getContentType();
 Enumeration e = request.getHeaderNames();
@@ -36,9 +36,13 @@ Enumeration e = request.getHeaderNames();
     fs.close(); 
     */
 
+    String path = "/Users/hyunsoo/Desktop/test.txt";
+    out.print("업로드할 경로: " + path);
+
     InputStream in = request.getInputStream();
+    File file = new File(path);
     FileOutputStream fs
-    = new FileOutputStream("/home/hyunsoo/Desktop/test.txt");
+    = new FileOutputStream(file);
     int d;
     while((d=in.read()) != -1){
         	fs.write(d);

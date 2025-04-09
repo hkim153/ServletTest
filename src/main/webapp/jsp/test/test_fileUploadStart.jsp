@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="fileUploadResult.jsp" method="post"
+<form action="test_fileUploadResult.jsp" method="post"
         enctype="multipart/form-data">
 파일 업로드 : <input type="file" name="upload"><br>
 <input type="submit" value="업로드">
