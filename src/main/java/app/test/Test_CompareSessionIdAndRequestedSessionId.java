@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class IMS301941 extends HttpServlet
+@WebServlet(value="/test_compareSessionIdAndRequestedSessionId")
+public class Test_CompareSessionIdAndRequestedSessionId extends HttpServlet
 {
     @Override
     public  void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -25,16 +27,16 @@ public class IMS301941 extends HttpServlet
         }
         else
         {
-            out.println("들어온 session id: " + session.getId());
-            out.println("requestedSessionId: " + req.getRequestedSessionId());
+            out.println("들어온 session id: " + session.getId() + "<br>");
+            out.println("requestedSessionId: " + req.getRequestedSessionId() + "<br>");
         }
-        out.println("session invalidate and create new Session");
+        out.println("session invalidate and create new Session" + "<br>");
         session.invalidate();
 
         session = req.getSession(true);
 
-        out.println("새로만든 session id: " + session.getId());
-        out.println("requestedSessionId: " + req.getRequestedSessionId());
+        out.println("새로만든 session id: " + session.getId() + "<br>");
+        out.println("requestedSessionId: " + req.getRequestedSessionId() + "<br>");
 
         out.close();
     }

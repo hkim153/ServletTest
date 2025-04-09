@@ -10,13 +10,14 @@
 <hr>
 
 <ul>
-    <li><a href="../../checkHeaderAfterSendErrorInService">Service에서 SendError할 경우 헤더가 남아 있는지 확인</a></li>
-    <li><a href="../../jsp/test/multipartConfigAnnotationTest.jsp">Multipart Config Annotation Test</a></li>
-    <li><a href=../../bigResponseBodyServlet?length=1000&times=10>BigResponseBody Servlet Test</a></li>
-    <li><a href=../../timeoutServlet?msg=testMessage&timeout=1000&num=10&autoFlush=true>Timeout 테스트 페이지</a></li>
-    <li><a href="../../threadLocalServlet">Thread Local 사용하는 서블릿</a></li>
-    <li><a href="../../test_Invalid_Character_In_QueryString_Servlet?test=123|456">queryString에 특수문자 허용</a></li> <!--ims-302847 -->
-    <li><a href="../../jsp/test/test_asyncServlet_setTimeout.jsp">AsyncServlet 사용시 setTimeout이후 dispatch를 안할 경우</a></li> <!--ims-340386 -->
+    <li><a href="../../test_checkHeaderAfterSendErrorInService">Service에서 SendError할 경우 헤더가 남아 있는지 확인</a></li>
+    <li><a href="../../jsp/test/test_multipartConfigAnnotation.jsp">Multipart Config Annotation Test</a></li>
+    <li><a href=../../test_bigResponseBodyServlet?length=1000&times=10>BigResponseBody Servlet Test</a></li>
+    <li><a href=../../test_timeoutServlet?msg=testMessage&timeout=1000&num=10&autoFlush=true>Timeout 테스트 페이지</a></li>
+    <li><a href="../../test_threadLocalServlet">Using Thread Local in Servlet</a></li>
+    <li><a href="../../test_invalidCharacterInQueryString?test=123|456">Invalid QueryString</a></li> <!--ims-302847 -->
+    <li><a href="../../jsp/test/test_asyncServletSetTimeoutAndLazyDispatch.jsp">AsyncServlet 사용시 setTimeout이후 dispatch를 안할 경우</a></li> <!--ims-340386 -->
+    <li><a href="../../jsp/test/test_compareSessionIdAndRequestedSessionId.jsp">compare sessionId and requestSessionId after Invalidate</a></li> <!-- ims301941 -->
 
 
     <li><a href=jsp/requestResponseTest.jsp>Request and Response Test</a></li>
@@ -34,7 +35,6 @@
     <li><a href=jsp/ims/date.jsp>date</a></li>
     <li><a href=jsp/test/including.jsp>외부의 web-inf 요청 Test</a></li>
     <li><a href="IMS301143">ims301143</a></li>
-    <li><a href="jsp/test/ims301941.jsp">ims301941</a></li>
 </ul>
 </body>
 </html>

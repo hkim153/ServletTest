@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/checkHeaderAfterSendErrorInService")
+@WebServlet("/test_checkHeaderAfterSendErrorInService")
 public class Test_CheckHeaderAfterSendErrorInService extends HttpServlet
 {
     @Override

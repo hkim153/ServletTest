@@ -13,7 +13,7 @@
 <body>
 
 현재 sessionid = <%=session.getId()%>
-<form action="../../IMS301941" method=get>
+<form action="../../test_compareSessionIdAndRequestedSessionId" method=get>
     <input type="submit" value="Go">
 </form>
 </body>

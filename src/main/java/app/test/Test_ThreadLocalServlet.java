@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value="/threadLocalServlet")
-public class ThreadLocalServlet extends HttpServlet
+@WebServlet(value="/test_threadLocalServlet")
+public class Test_ThreadLocalServlet extends HttpServlet
 {
     private static final ThreadLocal<Data> threadLocal = new ThreadLocal<>();
     @Override

@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 //ims-302847
-@WebServlet(value="/test_Invalid_Character_In_QueryString_Servlet")
-public class Test_Invalid_Character_In_QueryString_Servlet extends HttpServlet
+@WebServlet(value="/test_invalidCharacterInQueryString")
+public class Test_InvalidCharacterInQueryString extends HttpServlet
 {
     @Override
     public  void doGet(HttpServletRequest req, HttpServletResponse resp)

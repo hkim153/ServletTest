@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value="/bigResponseBodyServlet")
-public class BigResponseBodyServlet extends HttpServlet {
+@WebServlet(value="/test_bigResponseBodyServlet")
+public class Test_BigResponseBodyServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html;charset=utf-8");

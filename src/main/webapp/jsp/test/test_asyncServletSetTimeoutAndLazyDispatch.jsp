@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<form action="../../test_asyncServlet_setTimeout_1" method="post">
+<form action="../../test_asyncServletSetTimeoutAndLazyDispatch1" method="post">
 
     asyncTimeout: <input type="text" name="asyncTimeout"> <br/>
     sleepTimeout: <input type="text" name="sleepTimeout"> <br/>

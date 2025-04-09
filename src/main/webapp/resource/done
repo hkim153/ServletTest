@@ -21,7 +21,8 @@ webApp
 		-jsp done
 		-servlet
 		-test
-			multipartConfigAnnotationTest.jsp done
+			test_asyncServlet_setTimeout.jsp done
+			test_multipartConfigAnnotation.jsp done
 		-websocket
 	-resource
 		-img

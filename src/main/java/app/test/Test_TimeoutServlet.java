@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/timeoutServlet")
-public class TimeoutServlet extends HttpServlet {
+@WebServlet("/test_timeoutServlet")
+public class Test_TimeoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         String message;
         String messageParam = req.getParameter("msg");

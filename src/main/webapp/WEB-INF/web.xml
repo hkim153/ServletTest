@@ -349,15 +349,6 @@
         <url-pattern>/IMS301143</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>IMS301941</servlet-name>
-        <servlet-class>app.test.IMS301941</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>IMS301941</servlet-name>
-        <url-pattern>/IMS301941</url-pattern>
-    </servlet-mapping>
-
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
@@ -379,7 +370,7 @@
 
     <error-page>
         <error-code>530</error-code>
-        <location>/errorPageFor530</location>
+        <location>/test_errorPageFor530</location>
     </error-page>
 
     <!--DONE -->
