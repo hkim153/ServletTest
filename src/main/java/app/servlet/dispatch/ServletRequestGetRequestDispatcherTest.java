@@ -3,7 +3,6 @@ package app.servlet.dispatch;
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +13,8 @@ import app.servlet.GetPostServlet;
 /**
  * parameter {path, hasSlash}
  */
-@WebServlet(value="/servletContextGetRequestedDispatcherTest")
-public class ServletContextGetRequestedDispatcherTest extends GetPostServlet
+@WebServlet(value="/servletRequestGetRequestDispatcherTest")
+public class ServletRequestGetRequestDispatcherTest extends GetPostServlet
 {
     @Override
     protected void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException
@@ -31,8 +30,7 @@ public class ServletContextGetRequestedDispatcherTest extends GetPostServlet
             }
         }
 
-        ServletContext servletContext = getServletContext();
-        RequestDispatcher requestDispatcher = servletContext.getRequestDispatcher(path);
+        RequestDispatcher requestDispatcher = req.getRequestDispatcher(path);
 
         if(requestDispatcher == null)
         {

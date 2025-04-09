@@ -12,8 +12,8 @@
 </head>
 <body>
 
-<a href="../../../html/servlet/servletPackageApi.html"><h1>jakarta.servlet</h1></a>
-<a href="servletContext.jsp"><h1>ServletContext</h1></a>
+<h1><a href="../../../html/servlet/servletPackageApi.html">jakarta.servlet</a></h1>
+<h1><a href="servletContext.jsp">ServletContext</a></h1>
 <h1>public RequestDispatcher getNamedDispatcher(String name)</h1>
 <hr>
 
