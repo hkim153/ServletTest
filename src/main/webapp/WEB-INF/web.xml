@@ -358,15 +358,6 @@
         <url-pattern>/IMS301941</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>ThreadLocalServlet</servlet-name>
-        <servlet-class>app.test.ThreadLocalServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ThreadLocalServlet</servlet-name>
-        <url-pattern>/threadLocalServlet</url-pattern>
-    </servlet-mapping>
-
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.htm</welcome-file>
