@@ -312,14 +312,6 @@
     </servlet-mapping>
 
     <!-- ims servlet -->
-    <servlet>
-        <servlet-name>bigBodyServlet</servlet-name>
-        <servlet-class>app.servlet.test.BigBodyServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>bigBodyServlet</servlet-name>
-        <url-pattern>/bigBodyServlet</url-pattern>
-    </servlet-mapping>
 
     <servlet>
         <servlet-name>IMS248744</servlet-name>

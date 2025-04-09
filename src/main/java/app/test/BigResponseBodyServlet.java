@@ -1,15 +1,17 @@
-package app.servlet.test;
+package app.test;
 
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class BigBodyServlet extends HttpServlet {
+@WebServlet(value="/bigResponseBodyServlet")
+public class BigResponseBodyServlet extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
         res.setContentType("text/html;charset=utf-8");
@@ -25,7 +27,7 @@ public class BigBodyServlet extends HttpServlet {
 
         for(int i = 0; i < times; i++) {
             String data = generateRandomString(length);
-            out.print(data);
+            out.println(data);
         }
     }
 
