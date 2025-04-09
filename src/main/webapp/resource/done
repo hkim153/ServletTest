@@ -1,0 +1,33 @@
+java
+	-app
+		-servlet
+		-test
+			MultipartConfigAnnotationTest.java done
+		-websocket
+		CommandProcess.java
+		Controller.java
+
+webApp
+	-html
+		-jsp
+		-servlet
+		-test
+			initConfig.html
+			stateInfo.html
+			test_init.html
+		-websocket
+	-jsp
+		-jsp done
+		-servlet
+		-test
+			multipartConfigAnnotationTest.jsp done
+		-websocket
+	-resource
+		-img
+		-service
+		control.properties
+		temp.txt
+	-WEB-INF
+		jeus-web-dd.xml done
+		web.xml
+	index.html done

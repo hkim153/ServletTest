@@ -208,6 +208,5 @@
 	
 	<hr>
 	<h2>Test</h2>
-	<a href=../html/initConfig.html>start test...</a>
 </body>
 </html>
