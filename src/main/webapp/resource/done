@@ -1,23 +1,16 @@
 java
 	-app
 		-servlet
-		-test
-			MultipartConfigAnnotationTest.java done
-			ThreadLocalServlet.java done
-		-websocket
-		CommandProcess.java
-		Controller.java
-
+		-test done
 webApp
 	-html
-		-jsp
+		-jsp done
 		-servlet
 		-test done
-		-websocket
+		-websocket done
 	-jsp
 		-servlet
 		-test done
-		-websocket
 	-resource
 		-img
 		-service
