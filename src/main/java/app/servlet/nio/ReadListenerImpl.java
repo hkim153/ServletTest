@@ -2,7 +2,7 @@ package app.servlet.nio;
 
 import java.io.IOException;
 
-import javax.servlet.ReadListener;
+import jakarta.servlet.ReadListener;
 
 public class ReadListenerImpl implements ReadListener{
 

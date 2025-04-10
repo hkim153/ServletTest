@@ -2,7 +2,7 @@ package app.servlet.nio;
 
 import java.io.IOException;
 
-import javax.servlet.WriteListener;
+import jakarta.servlet.WriteListener;
 
 public class WriteListenerImpl implements WriteListener{
 

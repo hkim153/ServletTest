@@ -2,8 +2,8 @@ package app.servlet.async;
 
 import java.io.IOException;
 
-import javax.servlet.AsyncEvent;
-import javax.servlet.AsyncListener;
+import jakarta.servlet.AsyncEvent;
+import jakarta.servlet.AsyncListener;
 
 public class AsyncListenerTest implements AsyncListener {
 
