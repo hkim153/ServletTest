@@ -28,7 +28,7 @@
 	<% 		
 			session.invalidate();
 			session = request.getSession();
-			String url = response.encodeURL("../../postParam");
+			String url = response.encodeURL("../../test_servletIOTestResult");
 	%>
 	새로 생성된 session id = <%=session.getId() %> <br>
 	changeSessionId() 로 변경한 session id = <%=request.changeSessionId() %> <br>
@@ -37,13 +37,13 @@
 		String readObject = request.getParameter("readObject");
 		String writeObject = request.getParameter("writeObject");
 		String bufferSizeStr = request.getParameter("bufferSize");
-		if(bufferSizeStr != ""){
+		if(bufferSizeStr != null && !bufferSizeStr.isEmpty()){
 			Integer bufferSize = Integer.parseInt(bufferSizeStr);	
 			request.getServletContext().setAttribute("bufferSize", bufferSize);
 		}
 		String contentLengthStr = request.getParameter("contentLength");
 	
-		if(contentLengthStr != ""){
+		if(contentLengthStr != null && !contentLengthStr.isEmpty()){
 			Integer contentLength = Integer.parseInt(contentLengthStr);
 			request.getServletContext().setAttribute("contentLength", contentLength);
 		}
