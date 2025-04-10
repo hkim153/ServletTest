@@ -12,23 +12,16 @@ webApp
 	-html
 		-jsp
 		-servlet
-		-test
-			initConfig.html
-			stateInfo.html
-			test_init.html
+		-test done
 		-websocket
 	-jsp
-		-jsp done
 		-servlet
-		-test
-			test_asyncServlet_setTimeout.jsp done
-			test_multipartConfigAnnotation.jsp done
+		-test done
 		-websocket
 	-resource
 		-img
 		-service
-		control.properties
-		temp.txt
+		control.properties done
 	-WEB-INF
 		jeus-web-dd.xml done
 		web.xml
