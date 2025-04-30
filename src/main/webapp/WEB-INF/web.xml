@@ -20,6 +20,8 @@
    -->
     <display-name>ServletTest</display-name>
 
+    <default-context-path>servletTest</default-context-path>
+
     <locale-encoding-mapping-list>
         <locale-encoding-mapping>
             <locale>ko_KR</locale>
